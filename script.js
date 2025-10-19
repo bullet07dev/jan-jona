@@ -30,12 +30,68 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      // Simulate successful submit: reveal thank you message and clear the form
-      thankyou.classList.remove('hidden');
-      rsvpForm.reset();
+      // Send RSVP data to Google Apps Script endpoint for email notification
+      const rsvpData = {
+        name: name.value.trim(),
+        email: email.value.trim(),
+        attending: select.value
+      };
 
-      // Optionally hide the message after a short time
-      setTimeout(() => thankyou.classList.add('hidden'), 10000);
+      fetch('https://script.google.com/macros/s/AKfycbzK9M-f6SbWQCf9_ASfapObCkid4T5-vYxNWhv92Kk/dev', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(rsvpData)
+      })
+      .then(res => {
+        thankyou.classList.remove('hidden');
+        rsvpForm.reset();
+        setTimeout(() => thankyou.classList.add('hidden'), 10000);
+      })
+      .catch(() => {
+        alert('RSVP could not be sent. Please try again later.');
+      });
+    });
+  }
+});
+
+// GCash donation helpers
+document.addEventListener('DOMContentLoaded', function () {
+  const copyBtn = document.getElementById('copyGcash');
+  const gcashNumberEl = document.getElementById('gcashNumber');
+
+  // create toast element
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.id = 'toast';
+  toast.textContent = 'Copied to clipboard';
+  document.body.appendChild(toast);
+
+  function showToast(msg = 'Copied') {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2500);
+  }
+
+  if (copyBtn && gcashNumberEl) {
+    copyBtn.addEventListener('click', async function () {
+      const text = gcashNumberEl.textContent.trim();
+      try {
+        await navigator.clipboard.writeText(text);
+        showToast('GCash number copied');
+      } catch (err) {
+        // fallback
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          document.execCommand('copy');
+          showToast('GCash number copied');
+        } catch (e) {
+          alert('Copy failed — please copy the number manually: ' + text);
+        }
+        textarea.remove();
+      }
     });
   }
 });
