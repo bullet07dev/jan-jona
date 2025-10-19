@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John & Jane's Wedding</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <h1>Jan ❤️ Jona</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#details">Wedding Details</a></li>
+        <li><a href="#rsvp">RSVP</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h2>We’re Getting Married!</h2>
+      <p>Join us on <strong>January 01, 2026</strong> for our wedding celebration.</p>
+      <button id="rsvpButton">RSVP Now</button>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section id="story" class="story">
+    <h2>Our Love Story</h2>
+    <p>
+      From a simple hello to forever — our story began in college, grew through laughter, adventures, and endless love. We can’t wait to start this new chapter with you!
+    </p>
+  </section>
+
+  <!-- RSVP Section -->
+  <section id="rsvp" class="rsvp">
+    <h2>RSVP</h2>
+    <p>Let us know if you’ll be joining us!</p>
+    <form id="rsvpForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <select required>
+        <option value="">Will you attend?</option>
+        <option value="yes">Yes, I’ll be there!</option>
+        <option value="no">Sorry, I can’t make it.</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="thankyou" class="hidden">Thank you for your response! 💕</p>
+  </section>
+  <!-- Wedding Details (merged) -->
+  <section id="details" class="details">
+    <h2>Wedding Details</h2>
+    <div class="info">
+      <div>
+        <h3>📅 Date</h3>
+        <p>January 01, 2026</p>
+      </div>
+      <div>
+        <h3>📍 Venue</h3>
+        <p>Sunset Garden Resort, Tagaytay</p>
+      </div>
+      <div>
+        <h3>🕓 Time</h3>
+        <p>Ceremony starts at 4:00 PM</p>
+      </div>
+    </div>
+
+    <!-- Google Maps Embed -->
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.895305023048!2d120.93626627595822!3d14.096242389055055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd6cfbbfef4f11%3A0x6398cc82ed2f23f2!2sTagaytay%20City!5e0!3m2!1sen!2sph!4v1734521800000!5m2!1sen!2sph"
+        width="100%"
+        height="400"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        aria-label="Map showing the venue location">
+      </iframe>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Jan & Jona Wedding | Made with ❤️</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

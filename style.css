@@ -1,0 +1,295 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  color: #f8f3d4; /* soft gold text */
+  background-color: #0d0d0d; /* deep black background */
+  scroll-behavior: smooth;
+}
+
+/* Header & Nav */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(15, 15, 15, 0.95);
+  box-shadow: 0 2px 10px rgba(255, 215, 0, 0.15);
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+}
+
+nav h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 1.8rem;
+  color: #ffd700; /* gold */
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #f8f3d4;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ffd700;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1529634899071-4e45c8937c30?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-family: "Great Vibes", cursive;
+  color: #ffd700;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #f8f3d4;
+}
+
+.hero button {
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #ffd700, #c59b00);
+  color: #0d0d0d;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.hero button:hover {
+  background: linear-gradient(135deg, #f4c542, #b88a00);
+  transform: scale(1.05);
+}
+
+/* Sections */
+section {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.story p,
+.details p {
+  max-width: 700px;
+  margin: 1rem auto;
+  line-height: 1.6;
+  color: #f8f3d4;
+}
+
+/* Details Section */
+.details .info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.details .info div {
+  background: #1a1a1a;
+  border: 1px solid #c59b00;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.15);
+}
+
+.details h2 {
+  color: #ffd700;
+}
+
+/* RSVP */
+.rsvp h2 {
+  color: #ffd700;
+}
+
+.rsvp form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.rsvp input,
+.rsvp select {
+  padding: 0.75rem;
+  width: 80%;
+  max-width: 400px;
+  border: 1px solid #c59b00;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #f8f3d4;
+}
+
+.rsvp input::placeholder {
+  color: #a89f74;
+}
+
+.rsvp button {
+  background: linear-gradient(135deg, #ffd700, #c59b00);
+  color: #0d0d0d;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.rsvp button:hover {
+  background: linear-gradient(135deg, #f4c542, #b88a00);
+}
+
+#thankyou {
+  color: #ffd700;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+/* Utility hidden class used by script.js to toggle visibility */
+.hidden {
+  display: none !important;
+}
+
+/* Donation Section */
+.donate {
+  background: #111;
+}
+
+.donate h2 {
+  color: #ffd700;
+}
+
+.donation-options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.donation-options .card {
+  background: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 15px;
+  border: 1px solid #c59b00;
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.15);
+  width: 280px;
+  text-align: center;
+}
+
+.donation-options img {
+  width: 150px;
+  height: 150px;
+  margin: 1rem auto;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 2px solid #ffd700;
+}
+
+.donation-options button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #ffd700, #c59b00);
+  color: #0d0d0d;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.donation-options button:hover {
+  background: linear-gradient(135deg, #f4c542, #b88a00);
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background: #0d0d0d;
+  border-top: 1px solid #c59b00;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #f8f3d4;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    background: #0d0d0d;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    display: none;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.15);
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+}
+.map-container {
+  margin-top: 3rem;
+  border: 2px solid #c59b00;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.15);
+}
+
+.map-container iframe {
+  display: block;
+  width: 100%;
+  height: 400px;
+  filter: grayscale(50%) brightness(80%) sepia(30%) hue-rotate(10deg);
+  transition: 0.3s ease;
+}
+
+.map-container iframe:hover {
+  filter: none;
+}
