@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
         attending: select.value
       };
 
-      fetch('https://script.google.com/macros/s/AKfycbzK9M-f6SbWQCf9_ASfapObCkid4T5-vYxNWhv92Kk/dev', {
+      fetch('https://script.google.com/macros/s/AKfycbzr-rLhyXjTYRyy1u3eaNTcV47JssewaiQHAlP2_c71fVJmwVtdTKMEF2qlkFgEcWW8/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(rsvpData)
